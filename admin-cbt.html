@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin CBT Results</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin-cbt">
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header"><div class="sidebar-brand"><img class="brand-logo" src="logo-white.svg" alt="" /><span>Admin</span></div><button class="btn btn-secondary" type="button" data-mobile-menu>☰</button></div>
+        <nav>
+          <a href="admin-dashboard.html">Dashboard</a>
+          <a href="admin-students.html">Students</a>
+          <a href="admin-teachers.html">Teachers</a>
+          <a href="admin-classes.html">Classes</a>
+          <a href="admin-subjects.html">Subjects</a>
+          <a class="active" href="admin-cbt.html">CBT</a>
+          <a href="admin-academic-results.html">Academic Results</a>
+          <a href="admin-activities.html">Activities</a>
+          <a href="admin-settings.html">Settings</a>
+          <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+      </aside>
+      <main class="main-panel">
+        <header class="topbar"><h1 class="page-title">CBT Results</h1><div class="topbar-actions"><span class="user-chip">Admin</span><button class="btn btn-secondary" type="button" onclick="logout()">Logout</button></div></header>
+        <div class="content">
+          <section class="table-card">
+            <div class="filter-bar">
+              <div class="filter-group"><label>Student</label><select><option>All</option></select></div>
+              <div class="filter-group"><label>Class</label><select><option>All</option></select></div>
+              <div class="filter-group"><label>Subject</label><select><option>All</option></select></div>
+              <div class="filter-group"><label>Date</label><input type="date" /></div>
+            </div>
+            <div class="table-wrapper">
+              <table>
+                <thead><tr><th>Student</th><th>Class</th><th>Subject</th><th>Score</th><th>Percentage</th><th>Date</th></tr></thead>
+                <tbody id="adminCbtTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-sync.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin-dashboard">
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand"><img class="brand-logo" src="logo-white.svg" alt="" /><span>Admin</span></div>
+          <button class="btn btn-secondary" type="button" data-mobile-menu>☰</button>
+        </div>
+        <nav>
+          <a class="active" href="admin-dashboard.html">Dashboard</a>
+          <a href="admin-students.html">Students</a>
+          <a href="admin-teachers.html">Teachers</a>
+          <a href="admin-classes.html">Classes</a>
+          <a href="admin-subjects.html">Subjects</a>
+          <a href="admin-cbt.html">CBT</a>
+          <a href="admin-academic-results.html">Academic Results</a>
+          <a href="admin-activities.html">Activities</a>
+          <a href="admin-settings.html">Settings</a>
+          <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <h1 class="page-title">Admin Portal</h1>
+          <div class="topbar-actions">
+            <span class="school-name-label" data-school-name>School Name</span>
+            <span class="user-chip">Administrator</span>
+            <button class="btn btn-secondary" type="button" onclick="logout()">Logout</button>
+          </div>
+        </header>
+
+        <div class="content">
+          <div class="stats-grid">
+            <div class="stat-card"><div class="small-label">Total Students</div><h3 id="totalStudents">0</h3></div>
+            <div class="stat-card"><div class="small-label">Total Teachers</div><h3 id="totalTeachers">0</h3></div>
+            <div class="stat-card"><div class="small-label">Total Classes</div><h3 id="totalClasses">0</h3></div>
+            <div class="stat-card"><div class="small-label">Total Subjects</div><h3 id="totalSubjects">0</h3></div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card"><div class="small-label">CBT Tests Taken</div><h3 id="cbtTests">0</h3></div>
+            <div class="stat-card"><div class="small-label">Academic Results</div><h3 id="academicResultsTotal">0</h3></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-sync.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

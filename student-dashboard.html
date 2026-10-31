@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="student-dashboard">
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand"><img class="brand-logo" src="logo-white.svg" alt="" /><span>Student</span></div>
+          <button class="btn btn-secondary" type="button" data-mobile-menu>☰</button>
+        </div>
+        <nav>
+          <a class="active" href="student-dashboard.html">Dashboard</a>
+          <a href="student-profile.html">My Profile</a>
+          <a href="student-subjects.html">My Subjects</a>
+          <a href="student-cbt.html">Take CBT</a>
+          <a href="student-cbt-result.html">CBT Results</a>
+          <a href="student-academic-results.html">Academic Results</a>
+          <a href="student-activities.html">Activities</a>
+          <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <h1 class="page-title">Student Portal</h1>
+          <div class="topbar-actions">
+            <span class="school-name-label" data-school-name>School Name</span>
+            <span class="user-chip" id="studentWelcome">Student</span>
+            <button class="btn btn-secondary" type="button" onclick="logout()">Logout</button>
+          </div>
+        </header>
+
+        <div class="content">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="small-label">Subjects</div>
+              <h3 id="subjectsCount">0</h3>
+            </div>
+            <div class="stat-card">
+              <div class="small-label">CBT Tests Taken</div>
+              <h3 id="cbtTaken">0</h3>
+            </div>
+            <div class="stat-card">
+              <div class="small-label">Average CBT Score</div>
+              <h3 id="avgCbt">0%</h3>
+            </div>
+            <div class="stat-card">
+              <div class="small-label">Academic Average</div>
+              <h3 id="avgAcademic">0%</h3>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <section class="card">
+              <div class="card-header">
+                <h3>Student Overview</h3>
+              </div>
+              <div class="list">
+                <div class="list-item"><span>Student ID</span><strong id="studentId">-</strong></div>
+                <div class="list-item"><span>Class</span><strong id="studentClass">-</strong></div>
+                <div class="list-item"><span>Session</span><strong id="studentSession">-</strong></div>
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="card-header">
+                <h3>Recent Activity</h3>
+              </div>
+              <ul id="recentActivityList" class="list"></ul>
+            </section>
+          </div>
+
+          <section class="card upcoming-cbt-section">
+            <div class="card-header">
+              <h3>Upcoming CBT Tests</h3>
+            </div>
+            <div id="upcomingCbtList" class="list"></div>
+          </section>
+
+          <section class="table-card">
+            <div class="card-header">
+              <h3>Recent CBT Results</h3>
+            </div>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Score</th>
+                    <th>Percentage</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="recentCbtResults"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-sync.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

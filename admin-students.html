@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Students</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin-students">
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header"><div class="sidebar-brand"><img class="brand-logo" src="logo-white.svg" alt="" /><span>Admin</span></div><button class="btn btn-secondary" type="button" data-mobile-menu>☰</button></div>
+        <nav>
+          <a href="admin-dashboard.html">Dashboard</a>
+          <a class="active" href="admin-students.html">Students</a>
+          <a href="admin-teachers.html">Teachers</a>
+          <a href="admin-classes.html">Classes</a>
+          <a href="admin-subjects.html">Subjects</a>
+          <a href="admin-cbt.html">CBT</a>
+          <a href="admin-academic-results.html">Academic Results</a>
+          <a href="admin-activities.html">Activities</a>
+          <a href="admin-settings.html">Settings</a>
+          <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+      </aside>
+      <main class="main-panel">
+        <header class="topbar"><h1 class="page-title">Students</h1><div class="topbar-actions"><span class="user-chip">Admin</span><button class="btn btn-secondary" type="button" onclick="logout()">Logout</button></div></header>
+        <div class="content">
+          <section class="card">
+            <div class="card-header"><h3>Add Student</h3></div>
+            <form id="addStudentForm" class="form-grid">
+              <div><label>Full Name</label><input id="studentName" type="text" required /></div>
+              <div><label>Student ID</label><input id="studentId" type="text" required /></div>
+              <div><label for="studentClass">Class</label><select id="studentClass" required></select></div>
+              <div><label>Date of birth</label><input id="studentDateOfBirth" type="date" required /></div>
+              <div><label>Session</label><input id="studentSession" type="text" value="2026/2027" required /></div>
+              <div><label>Password</label><input id="studentPassword" type="password" value="123456" /></div>
+              <div><label>Status</label><select id="studentStatus"><option>Active</option><option>Inactive</option></select></div>
+              <div><label for="studentPhoto">Student photo</label><input id="studentPhoto" type="file" accept="image/*" /></div>
+              <div style="grid-column: 1 / -1;"><button class="btn btn-primary" type="submit">Add Student</button></div>
+            </form>
+          </section>
+
+          <section class="table-card" style="margin-top: 1rem;">
+            <div class="card-header"><h3>Student Records</h3></div>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr><th>Student ID</th><th>Name</th><th>Class</th><th>Date of birth</th><th>Session</th><th>Status</th><th>Action</th></tr>
+                </thead>
+                <tbody id="adminStudentsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-sync.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Results</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="student-results-page" data-page="student-academic-results">
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand"><img class="brand-logo" src="logo-white.svg" alt="" /><span>Student</span></div>
+          <button class="btn btn-secondary" type="button" data-mobile-menu>☰</button>
+        </div>
+        <nav>
+          <a href="student-dashboard.html">Dashboard</a>
+          <a href="student-profile.html">My Profile</a>
+          <a href="student-subjects.html">My Subjects</a>
+          <a href="student-cbt.html">Take CBT</a>
+          <a href="student-cbt-result.html">CBT Results</a>
+          <a class="active" href="student-academic-results.html">Academic Results</a>
+          <a href="student-activities.html">Activities</a>
+          <a href="index.html" onclick="logout()">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <h1 class="page-title">Academic Results</h1>
+          <div class="topbar-actions"><span class="user-chip">Student</span><button class="btn btn-secondary" type="button" onclick="logout()">Logout</button></div>
+        </header>
+
+        <div class="content">
+          <section class="filter-bar result-controls" aria-label="Result controls">
+            <div class="result-control-fields">
+              <div class="filter-group">
+                <label for="termSelect">Term</label>
+                <select id="termSelect">
+                  <option>First Term</option>
+                  <option>Second Term</option>
+                  <option>Third Term</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="resultSessionSelect">Session</label>
+                <select id="resultSessionSelect"></select>
+              </div>
+            </div>
+            <button class="btn btn-primary result-actions" id="downloadResult" type="button">Print / Save PDF</button>
+          </section>
+
+          <article class="report-card" id="reportCard" aria-label="Student academic report card"></article>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-sync.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

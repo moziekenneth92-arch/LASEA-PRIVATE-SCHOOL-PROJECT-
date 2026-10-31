@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="login-page" data-page="login">
+    <div class="login-card">
+      <div class="login-header">
+        <img class="login-logo" src="logo.svg" alt="Logo" />
+        <span class="eyebrow">Admin Portal</span>
+        <h1>Admin Login</h1>
+      </div>
+
+      <form data-login-form data-role="admin">
+        <div>
+          <label for="adminId">Admin ID or email</label>
+          <input id="adminId" name="id" type="text" autocomplete="username" placeholder="Enter Admin ID or email" required />
+        </div>
+
+        <div>
+          <label for="adminPassword">Password</label>
+          <input id="adminPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter Password" required />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <a href="#" class="text-link" data-request-password>Request new password from admin</a>
+        </div>
+
+        <p class="form-message" aria-live="polite"></p>
+      </form>
+      <a href="index.html" class="text-link">Back to homepage</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-sync.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
